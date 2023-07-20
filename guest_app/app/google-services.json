@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1038198571819",
+    "firebase_url": "https://support-android-app-d3115-default-rtdb.firebaseio.com",
+    "project_id": "support-android-app-d3115",
+    "storage_bucket": "support-android-app-d3115.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038198571819:android:3e5b1ad83d26cd117fbb6e",
+        "android_client_info": {
+          "package_name": "com.cisco.sdk_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038198571819-2b1pnescvanh3cvo87dvcr3pkl3l7hfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcEsHdsWsXssIing-gQkgfeD28dP3wxNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038198571819-2b1pnescvanh3cvo87dvcr3pkl3l7hfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

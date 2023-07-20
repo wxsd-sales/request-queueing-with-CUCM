@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <link rel="stylesheet" href="https://code.s4d.io/widget-space/production/main.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.s4d.io/widget-space/production/bundle.js"></script>
+</head>
+<body>
+<div id="my-webex-widget" style="width:363px;height:570px"/>
+<script type="text/javascript">
+    function sendMessage() {
+		var valueReceived =  document.getElementById("inputField").value;
+        JSBridge.showMessageInNative(valueReceived);
+    }
+
+    function updateFromNative(message,email){
+            var widgetEl = document.getElementById('my-webex-widget');
+              webex.widget(widgetEl).spaceWidget({
+                 accessToken: message,
+                destinationType: 'email',
+                destinationId: email,
+                spaceActivities: {"files":true,"meet":true,"message":true,"people":true},
+                initialActivity: 'message',
+                secondaryActivitiesFullWidth: false,
+                composerActions: {"attachFiles":true},
+                disablePresence: false,
+                disableFlags: false
+              });
+    }
+
+</script>
+
+<!--<script>-->
+<!--  // Grab DOM element where widget will be attached-->
+<!--  var widgetEl = document.getElementById('my-space-widget');-->
+<!--   var message = updateFromNative("1234")-->
+<!--  // Initialize a new Space widget-->
+<!--  webex.widget(widgetEl).spaceWidget({-->
+<!--    accessToken: message,-->
+<!--    destinationType: 'emailId',-->
+<!--    destinationId: 'rajithabhavani.kantheti@gmail.com'-->
+<!--  });-->
+<!--</script>-->
+</body>
+</html>
