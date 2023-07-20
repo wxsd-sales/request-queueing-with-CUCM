@@ -1,0 +1,49 @@
+package com.ciscowebex.androidsdk.kitchensink.utils
+
+class Constants {
+    object Intent {
+        const val PERSON = "PERSON"
+        const val OUTGOING_CALL_CALLER_ID = "OUTGOING_CALL_CALLER_ID"
+        const val CALLING_ACTIVITY_ID = "CALLING_ACTIVITY_ID"
+        const val TEAM_ID = "teamId"
+        const val SPACE_ID = "spaceId"
+        const val COMPOSER_ID = "composerId"
+        const val COMPOSER_TYPE = "composerType"
+        const val ACCESS_TOKEN="access_token"
+        const val EMAIL_ID="email"
+        const val COMPOSER_REPLY_PARENT_MESSAGE = "composerReplyParentMessage"
+        const val CALL_ID = "callid"
+        const val PUSH_ID = "pushid"
+        const val MESSAGE_ID = "MESSAGE_ID"
+        const val CALENDAR_MEETING_ID = "CALENDAR_MEETING_ID"
+        const val KEY_UC_LOGIN_PAGE_ACTION = "KEY_UC_LOGIN_PAGE_ACTION"
+        const val KEY_SSO_URL = "KEY_SSO_URL"
+    }
+    object Bundle {
+        const val MESSAGE_ID = "messageId"
+        const val PERSON_ID = "person_id"
+        const val KEY_TASK_TYPE = "task_type"
+        const val SPACE_ID = "spaceId"
+        const val IS_CALLING_ENABLED = "isCallingEnabled"
+        const val IS_MESSAGING_ENABLED = "isMessagingEnabled"
+        const val TEAM_ID = "teamId"
+        const val REMOTE_FILE = "remote_file"
+    }
+    object Action {
+        const val MESSAGE_ACTION = "MESSAGE_ACTION"
+        const val WEBEX_CALL_ACTION = "WEBEX_CALL_ACTION"
+        const val WEBEX_CUCM_CALL_ACTION = "WEBEX_CUCM_CALL_ACTION"
+    }
+    object Keys {
+        const val PushRestEncryptionKey = "PeShVmYq3s6v9yaBwE1H3McQfTjWnZr4"  //256 bit AES key, use base64 encoded key to send to cucm endpoint
+        const val KitchenSinkSharedPref = "KSSharedPref"
+        const val LoginType = "LoginType"
+        const val Email = "Email"
+        const val IsVirtualBgAdded = "IsVirtualBgAdded"
+        const val IsBackgroundRunningEnabled = "IsBackgroundRunningEnabled"
+    }
+    object DefaultMax {
+        const val SPACE_MAX = 100
+        const val TEAM_MAX = 100
+    }
+}

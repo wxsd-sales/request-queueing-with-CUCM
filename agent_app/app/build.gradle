@@ -1,0 +1,105 @@
+import com.ciscowebex.androidsdk.build.*
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+apply plugin: 'com.google.firebase.crashlytics' // Crashlytics Gradle plugin
+
+android {
+    compileSdkVersion Versions.compileSdk
+    buildToolsVersion Versions.buildTools
+    ndkVersion Versions.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+    defaultConfig {
+        applicationId "com.cisco.sdk_android"
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode 37000
+        versionName "3.7.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "CLIENT_ID", "${CLIENT_ID}"
+        buildConfigField "String", "CLIENT_SECRET", "${CLIENT_SECRET}"
+        buildConfigField "String", "SCOPE", "${SCOPE}"
+        buildConfigField "String", "REDIRECT_URI", "${REDIRECT_URI}"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    splits {
+        // Configures multiple APKs based on ABI.
+        abi {
+            // Enables building multiple APKs per ABI.
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86, armeabi-v7a, and mips.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "x86", "x86_64", "armeabi-v7a", "arm64-v8a"
+
+            // Specifies that we want to also generate a universal APK that includes all ABIs.
+            universalApk true
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.ciscowebex:androidsdk:3.7.0'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Dependencies.kotlinStdLib
+    implementation Dependencies.coreKtx
+    implementation Dependencies.appCompat
+    implementation Dependencies.constraintLayout
+    implementation Dependencies.material
+    implementation Dependencies.recyclerview
+    implementation Dependencies.cardview
+    implementation Dependencies.viewpager2
+    implementation Dependencies.koin
+    implementation Dependencies.koinViewModel
+    implementation Dependencies.swiperefresh
+    implementation Dependencies.media
+    implementation Dependencies.nimbusJosh
+
+    // RXJAVA
+    implementation Dependencies.rxjava
+    implementation Dependencies.rxandroid
+    implementation Dependencies.rxkotlin
+
+    testImplementation Dependencies.Test.junit
+    androidTestImplementation Dependencies.Test.androidxJunit
+    androidTestImplementation Dependencies.Test.espressoCore
+    androidTestImplementation Dependencies.Test.espressoContrib
+    androidTestImplementation Dependencies.Test.espressoWeb
+    androidTestImplementation Dependencies.Test.espressoIntents
+    androidTestImplementation Dependencies.Test.rules
+    androidTestImplementation Dependencies.Test.testExt
+    debugImplementation (Dependencies.Test.fragmentScenerio) {
+        exclude group: 'androidx.test', module: 'monitor'
+    }
+    implementation platform(Dependencies.firebaseBom)
+    implementation Dependencies.firebaseMessaging
+    implementation Dependencies.firebaseAnalytics
+    implementation Dependencies.firebaseCrashlytics
+    implementation Dependencies.gson
+    implementation Dependencies.glide
+
+}

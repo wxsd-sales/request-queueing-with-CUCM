@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "436009256058",
+    "project_id": "android-sdk-calling",
+    "storage_bucket": "android-sdk-calling.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436009256058:android:ab368c3d3ee8dfbced27c3",
+        "android_client_info": {
+          "package_name": "com.cisco.sdk_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436009256058-vv6ik33rtt8vunpgmgporpuh76iki5vg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEgODLaSUD4w2mlL5NVK0c34Qrov4NyWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436009256058-vv6ik33rtt8vunpgmgporpuh76iki5vg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
